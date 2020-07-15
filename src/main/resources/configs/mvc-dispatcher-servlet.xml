@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+  <task:annotation-driven />
+
+  <context:component-scan base-package="kr.co.erst.mobilelink_front" />
+
+  <aop:aspectj-autoproxy />
+
+  <mvc:resources mapping="resources/**" location="resources/" />
+
+  <!-- View Resolver -->
+  <mvc:annotation-driven>
+    <mvc:message-converters>
+      <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+      </bean>
+    </mvc:message-converters>
+  </mvc:annotation-driven>
+
+  <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+    <property name="order" value="0" />
+  </bean>
+
+  <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+    <property name="order" value="1" />
+  </bean>
+
+  <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+    <property name="definitions" value="classpath:configs/tiles3-config.xml" />
+  </bean>
+
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/pages/" />
+    <property name="suffix" value=".jsp" />
+    <property name="order" value="2" />
+    <property name="contentType" value="text/html; charset=UTF-8" />
+  </bean>
+  <!-- View Resolver End -->
+
+  <!-- External Config import -->
+  <import resource="db-context.xml" />
+  <!-- External Config import End -->
+
+</beans>
