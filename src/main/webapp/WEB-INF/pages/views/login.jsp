@@ -4,4 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 
-HELLO~! LOGIN PAGE!!
+<c:out value="${id}"/>
+<c:out value="${name}"/>
+<c:out value="${login}"/>
+<c:out value="${password}"/>

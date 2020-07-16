@@ -1,5 +1,6 @@
 package kr.co.erst.mobilelink_front.controllers;
 
+import kr.co.erst.mobilelink_front.entities.UserEntity;
 import kr.co.erst.mobilelink_front.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping(value = {"", "/"})
 public class LoginController {
-
     @Resource
     UserService userService;
 
@@ -22,6 +22,11 @@ public class LoginController {
      */
     @RequestMapping(method= RequestMethod.GET)
     public String login(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        UserEntity user = userService.selectMember();
+        model.addAttribute("id", user.getId());
+        model.addAttribute("name", user.getName());
+        model.addAttribute("login", user.getLogin());
+        model.addAttribute("password", user.getPassword());
         return "login";
     }
 
