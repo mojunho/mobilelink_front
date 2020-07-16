@@ -9,5 +9,6 @@
 	</settings>
 	<typeAliases>
 		<typeAlias alias="userEntity" type="kr.co.erst.mobilelink_front.entities.UserEntity"/>
+		<typeAlias alias="boardEntity" type="kr.co.erst.mobilelink_front.entities.BoardEntity"/>
 	</typeAliases>
 </configuration>

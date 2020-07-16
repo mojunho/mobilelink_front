@@ -21,5 +21,8 @@
     <property name="mapperInterface" value="kr.co.erst.mobilelink_front.dao.UserDAO" />
     <property name="sqlSessionFactory" ref="sessionFactory" />
   </bean>
-
+  <bean id="BoardDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="kr.co.erst.mobilelink_front.dao.BoardDAO" />
+    <property name="sqlSessionFactory" ref="sessionFactory" />
+  </bean>
 </beans>

@@ -12,6 +12,7 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private UserDAO userDAO;
 
+  @Override
   public UserEntity selectMember() {
     UserEntity user = userDAO.selectMember();
     return user;
