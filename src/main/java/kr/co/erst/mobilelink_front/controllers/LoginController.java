@@ -19,36 +19,81 @@ public class LoginController {
     @Resource
     BoardService boardService;
 
-    /**
-     * 기본 페이지
-     */
-//    @RequestMapping(method= RequestMethod.GET)
-//    public String testLogin(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
-//        UserEntity user = userService.selectMember();
-//        model.addAttribute("id", user.getId());
-//        model.addAttribute("name", user.getName());
-//        model.addAttribute("login", user.getLogin());
-//        model.addAttribute("password", user.getPassword());
-//        model.addAttribute("phonenumber", user.getPhonenumber());
-//        model.addAttribute("status", user.getStatus() == 1 ? "일반회원" : "사업자회원");
-//        model.addAttribute("createdDate" , user.getCreatedDate());
-//        BoardEntity board = boardService.selectOneBoard();
-//        model.addAttribute("boardId", board.getId());
-//        model.addAttribute("title", board.getTitle());
-//        model.addAttribute("content", board.getContent());
-//        model.addAttribute("regDate", board.getRegDate());
-//        return "views/test_login";
-//    }
-
+    // 로그인 페이지
     @RequestMapping(method = RequestMethod.GET)
     public String login(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
 
         return "views/login";
     }
 
-    @RequestMapping(value = "index", method = RequestMethod.GET)
+    // 홈 페이지
+    @RequestMapping(value = "homeMain", method = RequestMethod.GET)
     public String index(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
 
         return "views/index";
+    }
+
+    // 게시판 페이지
+    @RequestMapping(value = "sktBoard", method = RequestMethod.GET)
+    public String sktBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/skt_board";
+    }
+    @RequestMapping(value = "ktBoard", method = RequestMethod.GET)
+    public String ktBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/kt_board";
+    }
+    @RequestMapping(value = "lgtBoard", method = RequestMethod.GET)
+    public String lgtBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/lgt_board";
+    }
+    @RequestMapping(value = "internetBoard", method = RequestMethod.GET)
+    public String internetBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/internet_board";
+    }
+    @RequestMapping(value = "lifeMachineBoard", method = RequestMethod.GET)
+    public String lifeMachineBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/life_machine_board";
+    }
+    @RequestMapping(value = "eventBoard", method = RequestMethod.GET)
+    public String eventBoard(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/event_board";
+    }
+
+    // 게시판 상세보기 페이지
+    @RequestMapping(value = "sktView", method = RequestMethod.GET)
+    public String sktView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/skt_view";
+    }
+    @RequestMapping(value = "ktView", method = RequestMethod.GET)
+    public String ktView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/kt_view";
+    }
+    @RequestMapping(value = "lgtView", method = RequestMethod.GET)
+    public String lgtView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/lgt_view";
+    }
+    @RequestMapping(value = "internetView", method = RequestMethod.GET)
+    public String internetView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/internet_view";
+    }
+    @RequestMapping(value = "lifeMachineView", method = RequestMethod.GET)
+    public String lifeMachineView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/life_machine_view";
+    }
+    @RequestMapping(value = "eventView", method = RequestMethod.GET)
+    public String eventView(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        return "views/boards/boardview/event_view";
     }
 }

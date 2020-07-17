@@ -15,7 +15,7 @@
 
 <div class="location">
     <div class="centerThis">
-        <span><a href="#">생활가전 특판</a></span> &gt; <span><a href="#">생활가전</a></span> &gt; <strong>목록</strong>
+        <span><a href="#">생활 가전 특판</a></span> &gt; <span><a href="#">생활 가전</a></span> &gt; <strong>목록</strong>
     </div>
 </div>
 <div id="content_inner">
@@ -23,7 +23,7 @@
     <div class="subSec">
         <div class="centerThis">
             <div class="popTt">
-                <h2>생활가</h2>
+                <h2>생활 가전</h2>
             </div>
             <div class="searchBox">
                 <div class="srcSel">
@@ -55,32 +55,32 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
                 <tr>
-                    <td class="tl"><a href="list_view"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
+                    <td class="tl"><a href="lifeMachineView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
                     <td>2018.04.05</td>
                     <td>9879</td>
                 </tr>
