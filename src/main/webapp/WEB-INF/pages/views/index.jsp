@@ -53,7 +53,7 @@
                             </p>
                         </div>
                         <div class="bot">
-                            <a href="#"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
+                            <a href="sktBoard"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
                         </div>
                     </li>
                     <li>
@@ -64,7 +64,7 @@
                             </p>
                         </div>
                         <div class="bot">
-                            <a href="#"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
+                            <a href="ktBoard"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
                         </div>
                     </li>
                     <li>
@@ -75,7 +75,7 @@
                             </p>
                         </div>
                         <div class="bot">
-                            <a href="#"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
+                            <a href="lgtBoard"><span aria-hidden="true" class="icon-magnifier"></span> 자세히보기</a>
                         </div>
                     </li>
                 </ul>
@@ -85,13 +85,13 @@
             <div class="mButton">
                 <ul>
                     <li class="li01">
-                        <a href="#"> <h2>유선/인터넷 특판</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
+                        <a href="internetBoard"> <h2>유선/인터넷 특판</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
                     </li>
                     <li class="li02">
-                        <a href="#"> <h2>생활가전 특판</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
+                        <a href="lifeMachineBoard"> <h2>생활가전 특판</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
                     </li>
                     <li class="li03">
-                        <a href="#"> <h2>이벤트 공지</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
+                        <a href="eventBoard"> <h2>이벤트 공지</h2> <label>바로가기<i class="la la-arrow-right"></i></label> </a>
                     </li>
                 </ul>
             </div>

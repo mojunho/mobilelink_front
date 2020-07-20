@@ -28,7 +28,7 @@
         <div class="ltnav_inner" style="overflow:auto; -webkit-overflow-scrolling:touch;">
             <div id="ltnav_title">
                 <div class="ltnav_text">
-                    <h3><em><i class="la la-user"></i></em> 안녕하세요. <strong>홍길동</strong>님</h3>
+                    <h3><em><i class="la la-user"></i></em> 안녕하세요. <strong><c:out value="${userName}"/></strong>님</h3>
                 </div>
                 <a href="#" id="lnav_close2"><i class="la la-close"></i></a>
             </div>
@@ -71,7 +71,7 @@
                             <i class="la la-bullhorn"></i> 이벤트 공지
                         </div>
                     </li>
-                    <li onclick="location.href='company'">
+                    <li onclick="location.href='#'">
                         <div>
                             <i class="la la-building"></i> 회사소개
                         </div>
@@ -81,10 +81,10 @@
                             <i class="la la-cog"></i> 설정
                         </div>
                         <ul>
-                            <li onclick="location.href='mypage'">
+                            <li onclick="location.href='#'">
                                 내 정보 수정
                             </li>
-                            <li onclick="location.href='alarm'">
+                            <li onclick="location.href='#'">
                                 알림수신 설정
                             </li>
                             <li onclick="location.href='login'">

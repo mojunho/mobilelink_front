@@ -1,5 +1,6 @@
 package kr.co.erst.mobilelink_front.controllers;
 
+import kr.co.erst.mobilelink_front.entities.UserEntity;
 import kr.co.erst.mobilelink_front.service.BoardService;
 import kr.co.erst.mobilelink_front.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -10,26 +11,51 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 
 @Controller
-@RequestMapping(value = {"", "/"})
+//@RequestMapping(value = {"", "/"})
 public class LoginController {
     @Resource
     UserService userService;
     @Resource
     BoardService boardService;
 
-    // 로그인 페이지
-    @RequestMapping(method = RequestMethod.GET)
+    // 로그인 페이지, 시작 페이지
+    @RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
     public String login(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
-
         return "views/login";
     }
+    // 로그인 처리 후 홈페이지로 이동
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public String loginCheck(String login, String password, Model model, HttpSession httpSession) throws Exception {
+        System.out.println("@@@ login == " + login);
+        System.out.println("@@@ password == " + password);
+        HashMap<String, Object> test = new HashMap<String, Object>();
+        test.put("login", login);
+        test.put("password", password);
 
-    // 홈 페이지
+        UserEntity userEntity = userService.selectForPassword(test);
+//        UserEntity userEntity = userService.selectById(userId);
+        if (userEntity != null) {
+            httpSession.setAttribute("userEntity", userEntity);
+            model.addAttribute("msg", "login pass");
+            model.addAttribute("id", userEntity.getId());
+            model.addAttribute("userName", userEntity.getName());
+            return "views/index";
+        } else {
+            model.addAttribute("msg", "login fail");
+            return "views/login";
+        }
+    }
+
+    // 홈버튼
     @RequestMapping(value = "homeMain", method = RequestMethod.GET)
-    public String index(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
-
+    public String homeMain(Model model, HttpSession httpSession) throws Exception {
+        UserEntity userEntity = (UserEntity) httpSession.getAttribute("userEntity");
+        model.addAttribute("id", userEntity.getId());
+        model.addAttribute("userName", userEntity.getName());
         return "views/index";
     }
 

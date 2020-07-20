@@ -23,11 +23,11 @@
     <div class="subSec">
         <div class="centerThis">
             <div class="popTt">
-                <h2>이벤</h2>
+                <h2>이벤트</h2>
             </div>
             <div class="searchBox">
                 <div class="srcSel">
-					<span class="selectWrap">트
+					<span class="selectWrap">
 						<select class="selectBox">
 							<option>선택</option>
 						</select>

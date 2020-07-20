@@ -6,6 +6,8 @@ import kr.co.erst.mobilelink_front.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -13,8 +15,9 @@ public class UserServiceImpl implements UserService {
   private UserDAO userDAO;
 
   @Override
-  public UserEntity selectMember() {
-    UserEntity user = userDAO.selectMember();
+  public UserEntity selectForPassword(HashMap<String, Object> map) {
+    UserEntity user = userDAO.selectForPassword(map);
     return user;
   }
+
 }
