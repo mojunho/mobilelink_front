@@ -15,7 +15,7 @@
 
 <div class="location">
     <div class="centerThis">
-        <span><a href="#">이벤트 공지</a></span> &gt; <span><a href="#">이벤트</a></span> &gt; <strong>목록</strong>
+        <span>이벤트 공지</span> &gt; <span>이벤트</span> &gt; <strong>목록</strong>
     </div>
 </div>
 <div id="content_inner">

@@ -6,7 +6,7 @@
 <%@ include file="./include/header.jsp"%>
 <div id="content_inner" class="login_wrap">
     <div class="centerThis">
-        <form action="login" method="post">
+        <form action="/homeMain" method="post">
             <h1 class="images login_logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></h1>
             <div class="login_inputBox">
                 <div class="input_row">

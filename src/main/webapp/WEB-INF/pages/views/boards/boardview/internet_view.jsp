@@ -15,7 +15,7 @@
 
 <div class="location">
     <div class="centerThis">
-        <span><a href="#">유선/인터넷 특판</a></span> &gt; <span><a href="#">유선/인터넷</a></span> &gt; <strong>목록</strong>
+        <span>유선/인터넷 특판</span> &gt; <span>유선/인터넷</span> &gt; <strong>목록</strong>
     </div>
 </div>
 <div id="content_inner">

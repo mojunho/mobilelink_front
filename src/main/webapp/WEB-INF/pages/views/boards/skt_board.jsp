@@ -15,7 +15,7 @@
 
 <div class="location">
     <div class="centerThis">
-        <span><a href="#">모바일 임직원 특판</a></span> &gt; <span><a href="#">SKT</a></span> &gt; <strong>목록</strong>
+        <span>모바일 임직원 특판</span> &gt; <span>SKT</span> &gt; <strong>목록</strong>
     </div>
 </div>
 <div id="content_inner">

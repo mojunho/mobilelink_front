@@ -23,12 +23,12 @@ public class LoginController {
     BoardService boardService;
 
     // 로그인 페이지, 시작 페이지
-    @RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"", "/", "login"}, method = RequestMethod.GET)
     public String login(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
         return "views/login";
     }
     // 로그인 처리 후 홈페이지로 이동
-    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @RequestMapping(value = "homeMain", method = RequestMethod.POST)
     public String loginCheck(String login, String password, Model model, HttpSession httpSession) throws Exception {
         System.out.println("@@@ login == " + login);
         System.out.println("@@@ password == " + password);
@@ -49,7 +49,15 @@ public class LoginController {
             return "views/login";
         }
     }
-
+    // 로그아웃
+    @RequestMapping(value = "logout" , method = RequestMethod.GET)
+    public String logout(HttpSession httpSession) {
+        UserEntity userEntity = (UserEntity)httpSession.getAttribute("userEntity");
+        if (userEntity != null) {
+            httpSession.invalidate();
+        }
+        return "redirect:/";
+    }
     // 홈버튼
     @RequestMapping(value = "homeMain", method = RequestMethod.GET)
     public String homeMain(Model model, HttpSession httpSession) throws Exception {
@@ -90,6 +98,26 @@ public class LoginController {
 
         return "views/boards/event_board";
     }
+    @RequestMapping(value = "company", method = RequestMethod.GET)
+    public String company(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        return "views/common/company";
+    }
+    @RequestMapping(value = "alarm", method = RequestMethod.GET)
+    public String alarm(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        return "views/common/alarm";
+    }
+    @RequestMapping(value = "mypage", method = RequestMethod.GET)
+    public String mypage(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        return "views/common/mypage";
+    }
+    @RequestMapping(value = "companyUse", method = RequestMethod.GET)
+    public String companyUse(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        return "views/common/company_use";
+    }
+    @RequestMapping(value = "companyPerson", method = RequestMethod.GET)
+    public String companyPerson(final Model model, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        return "views/common/company_person";
+    }
 
     // 게시판 상세보기 페이지
     @RequestMapping(value = "sktView", method = RequestMethod.GET)
@@ -122,4 +150,5 @@ public class LoginController {
 
         return "views/boards/boardview/event_view";
     }
+
 }

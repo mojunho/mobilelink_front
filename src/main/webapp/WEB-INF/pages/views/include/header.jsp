@@ -22,7 +22,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/lnb.js" type="text/javascript"></script>
 <body>
 <div id="content_wrap" class="group">
-    <a href="#" id="lnav_close1"><i class="fa fa-times" aria-hidden="true"></i></a>
+<%--    <a href="#" id="lnav_close"><i class="fa fa-times" aria-hidden="true"></i></a>--%>
 
     <div id="ltnav">
         <div class="ltnav_inner" style="overflow:auto; -webkit-overflow-scrolling:touch;">
@@ -30,7 +30,7 @@
                 <div class="ltnav_text">
                     <h3><em><i class="la la-user"></i></em> 안녕하세요. <strong><c:out value="${userName}"/></strong>님</h3>
                 </div>
-                <a href="#" id="lnav_close2"><i class="la la-close"></i></a>
+                <a href="#" id="lnav_close"><i class="la la-close"></i></a>
             </div>
             <!---//ltnav_title-->
             <div id="cssmenu">
@@ -71,7 +71,7 @@
                             <i class="la la-bullhorn"></i> 이벤트 공지
                         </div>
                     </li>
-                    <li onclick="location.href='#'">
+                    <li onclick="location.href='company'">
                         <div>
                             <i class="la la-building"></i> 회사소개
                         </div>
@@ -81,13 +81,13 @@
                             <i class="la la-cog"></i> 설정
                         </div>
                         <ul>
-                            <li onclick="location.href='#'">
+                            <li onclick="location.href='mypage'">
                                 내 정보 수정
                             </li>
-                            <li onclick="location.href='#'">
+                            <li onclick="location.href='alarm'">
                                 알림수신 설정
                             </li>
-                            <li onclick="location.href='login'">
+                            <li onclick="location.href='logout'">
                                 로그아웃
                             </li>
                         </ul>

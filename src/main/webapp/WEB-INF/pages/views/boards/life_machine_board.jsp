@@ -15,7 +15,7 @@
 
 <div class="location">
     <div class="centerThis">
-        <span><a href="#">생활 가전 특판</a></span> &gt; <span><a href="#">생활 가전</a></span> &gt; <strong>목록</strong>
+        <span>생활 가전 특판</span> &gt; <span>생활 가전</span> &gt; <strong>목록</strong>
     </div>
 </div>
 <div id="content_inner">
