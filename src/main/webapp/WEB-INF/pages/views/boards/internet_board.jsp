@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="tiles"  uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <%--<?--%>
@@ -23,23 +24,29 @@
     <div class="subSec">
         <div class="centerThis">
             <div class="popTt">
-                <h2>유선/인터</h2>
+                <h2>유선/인터넷</h2>
             </div>
-            <div class="searchBox">
-                <div class="srcSel">
-					<span class="selectWrap">
-						<select class="selectBox">
-							<option>선택</option>
-						</select>
-						</span>
+            <form action="internetBoard" method="get">
+                <div class="searchBox">
+                    <div class="srcSel">
+                        <span class="selectWrap">
+                            <select id="condition" name="condition" class="selectBox">
+                                <option value="all" <c:if test="${cd eq 'all'}">selected</c:if>>전체</option>
+                                <option value="title" <c:if test="${cd eq 'title'}">selected</c:if>>제목</option>
+                                <option value="content" <c:if test="${cd eq 'content'}">selected</c:if>>내용</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="srcInput">
+                        <input type="text" placeholder="검색어 입력" class="int" id="keyword" name="keyword">
+                    </div>
+                    <div class="srcBtn">
+                        <button type="submit"><i class="icon-magnifier"></i>검색</button>
+                        <%--                        <a href="sktBoard?cd=${cd}&key=${key}"><i class="icon-magnifier"></i> 검색</a>--%>
+                    </div>
                 </div>
-                <div class="srcInput">
-                    <input type="text" placeholder="검색어 입력" class="int">
-                </div>
-                <div class="srcBtn">
-                    <a href="#"><i class="icon-magnifier"></i> 검색</a>
-                </div>
-            </div>
+            </form>
+            <c:if test="${!empty boardList}">
             <table class="tbList">
                 <colgroup>
                     <col width="*">
@@ -53,39 +60,70 @@
                     <th>조회수</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                <tr>
-                    <td class="tl"><a href="internetView"><span class="nowrap">건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.건강보험료 줄이는 방법을 안내해드립니다.</span></a></td>
-                    <td>2018.04.05</td>
-                    <td>9879</td>
-                </tr>
-                </tbody>
+                <c:forEach var="board" items="${boardList}" varStatus="vs" begin="0" step="1">
+                    <tbody>
+                    <tr>
+                        <td class="tl">
+                            <a href="internetView?id=${board.id}">
+                                    <span class="nowrap">
+                                        <c:out value="${board.title}"/>
+                                    </span>
+                            </a>
+                        </td>
+                        <td>
+                            <fmt:formatDate value="${board.regDate}" pattern="yyyy.MM.dd"/>
+                        </td>
+                        <td>
+                            <c:out value="${board.readCount}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </c:forEach>
+                </c:if>
             </table>
+        </div>
+        <style>
+            #paging {
+                text-align: center;
+            }
+            #paging_ul {
+                margin: 50px;
+                text-align: center;
+            }
+            .paging_li {
+                display: inline;
+                margin: 10px;
+            }
+        </style>
+        <div id="paging">
+            <ul id="paging_ul">
+                <c:if test="${pn > 1}">
+                    <li class="paging_li">
+                        <a href="${pageContext.request.contextPath}/internetBoard?pn=${pn-1}">
+                            <span>&laquo;</span>
+                        </a>
+                    </li>
+                </c:if>
+                <c:forEach varStatus="vs" begin="1" end="${maxPg}" step="1">
+                    <c:if test="${vs.current eq pn}">
+                        <li class="paging_li">
+                            <b>${vs.current}</b>
+                        </li>
+                    </c:if>
+                    <c:if test="${vs.current ne pn}">
+                        <li class="paging_li">
+                            <a href="${pageContext.request.contextPath}/internetBoard?pn=${vs.current}">${vs.current}</a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+                <c:if test="${pn < maxPg}">
+                    <li class="paging_li">
+                        <a href="${pageContext.request.contextPath}/internetBoard?pn=${pn+1}">
+                            <span>&raquo;</span>
+                        </a>
+                    </li>
+                </c:if>
+            </ul>
         </div>
         <!--//centerThis-->
     </div>
