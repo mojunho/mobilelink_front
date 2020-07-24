@@ -3,9 +3,9 @@
 
     <div class="top">
         <div class="centerThis">
-            <span><a href="company">회사소개</a></span>
-            <span><a href="companyUse">이용약관</a></span>
-            <span><a href="companyPerson">개인정보취급방침</a></span>
+            <span><a href="/company">회사소개</a></span>
+            <span><a href="/companyUse">이용약관</a></span>
+            <span><a href="/companyPerson">개인정보취급방침</a></span>
         </div>
     </div>
     <div class="bot">

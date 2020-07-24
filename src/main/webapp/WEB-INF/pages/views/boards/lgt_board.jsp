@@ -47,40 +47,40 @@
                 </div>
             </form>
             <c:if test="${!empty boardList}">
-            <table class="tbList">
-                <colgroup>
-                    <col width="*">
-                    <col width="25%">
-                    <col width="16%">
-                </colgroup>
-                <thead>
-                <tr>
-                    <th>제목</th>
-                    <th>날짜</th>
-                    <th>조회수</th>
-                </tr>
-                </thead>
-                <c:forEach var="board" items="${boardList}" varStatus="vs" begin="0" step="1">
+                <table class="tbList">
+                    <colgroup>
+                        <col width="*">
+                        <col width="25%">
+                        <col width="16%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>날짜</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <c:forEach var="board" items="${boardList}" varStatus="vs" begin="0" step="1">
                     <tbody>
-                    <tr>
-                        <td class="tl">
-                            <a href="lgtView?id=${board.id}">
-                                    <span class="nowrap">
-                                        <c:out value="${board.title}"/>
-                                    </span>
-                            </a>
-                        </td>
-                        <td>
-                            <fmt:formatDate value="${board.regDate}" pattern="yyyy.MM.dd"/>
-                        </td>
-                        <td>
-                            <c:out value="${board.readCount}"/>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td class="tl">
+                                <a href="lgtView?id=${board.id}">
+                                        <span class="nowrap">
+                                            <c:out value="${board.title}"/>
+                                        </span>
+                                </a>
+                            </td>
+                            <td>
+                                <fmt:formatDate value="${board.regDate}" pattern="yyyy.MM.dd"/>
+                            </td>
+                            <td>
+                                <c:out value="${board.readCount}"/>
+                            </td>
+                        </tr>
                     </tbody>
-                </c:forEach>
-                </c:if>
-            </table>
+                    </c:forEach>
+                </table>
+            </c:if>
         </div>
         <style>
             #paging {

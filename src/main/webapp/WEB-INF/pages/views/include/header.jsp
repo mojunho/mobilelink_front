@@ -45,7 +45,7 @@
                             <i class="la la-mobile"></i> 모바일 임직원 특판
                         </div>
                         <ul>
-                            <li onclick="location.href='/board/sktBoard'">
+                            <li onclick="location.href='/sktBoard'">
                                 SKT
                             </li>
                             <li onclick="location.href='/ktBoard'">

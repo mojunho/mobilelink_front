@@ -64,7 +64,7 @@
                     <tbody>
                         <tr>
                             <td class="tl">
-                                <a href="/board/sktView?id=${board.id}">
+                                <a href="/sktView?id=${board.id}">
                                     <span class="nowrap">
                                         <c:out value="${board.title}"/>
                                     </span>
@@ -79,8 +79,8 @@
                         </tr>
                     </tbody>
                     </c:forEach>
-                </c:if>
-            </table>
+                </table>
+            </c:if>
         </div>
         <style>
             #paging {
@@ -99,7 +99,7 @@
             <ul id="paging_ul">
                 <c:if test="${pn > 1}">
                     <li class="paging_li">
-                        <a href="${pageContext.request.contextPath}/board/sktBoard?pn=${pn-1}">
+                        <a href="${pageContext.request.contextPath}/sktBoard?pn=${pn-1}">
                             <span>&laquo;</span>
                         </a>
                     </li>
@@ -112,13 +112,13 @@
                     </c:if>
                     <c:if test="${vs.current ne pn}">
                         <li class="paging_li">
-                            <a href="${pageContext.request.contextPath}/board/sktBoard?pn=${vs.current}">${vs.current}</a>
+                            <a href="${pageContext.request.contextPath}/sktBoard?pn=${vs.current}">${vs.current}</a>
                         </li>
                     </c:if>
                 </c:forEach>
                 <c:if test="${pn < maxPg}">
                     <li class="paging_li">
-                        <a href="${pageContext.request.contextPath}/board/sktBoard?pn=${pn+1}">
+                        <a href="${pageContext.request.contextPath}/sktBoard?pn=${pn+1}">
                             <span>&raquo;</span>
                         </a>
                     </li>

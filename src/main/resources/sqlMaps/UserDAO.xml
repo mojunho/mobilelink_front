@@ -4,13 +4,13 @@
 <mapper namespace="kr.co.erst.mobilelink_front.dao.UserDAO">
     <select id="selectForPassword" parameterType="hashmap" resultType="userEntity">
         <![CDATA[
-            SELECT * FROM member WHERE login = #{login} AND password = #{password}
+            SELECT * FROM mobilelink.member WHERE login = #{login} AND password = #{password}
         ]]>
     </select>
 
     <select id="selectCheckForlogin" resultType="userEntity">
         <![CDATA[
-            SELECT * FROM member WHERE login = #{login}
+            SELECT * FROM mobilelink.member WHERE login = #{login}
         ]]>
     </select>
 

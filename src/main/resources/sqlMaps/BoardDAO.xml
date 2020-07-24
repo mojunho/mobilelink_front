@@ -4,62 +4,62 @@
 <mapper namespace="kr.co.erst.mobilelink_front.dao.BoardDAO">
     <select id="selectListBoardByStatus" parameterType="map" resultType="boardEntity">
         <![CDATA[
-            SELECT * FROM board WHERE status = #{status} ORDER BY reg_date DESC LIMIT #{offset}, #{limit}
+            SELECT * FROM mobilelink.board WHERE status = #{status} ORDER BY reg_date DESC LIMIT #{offset}, #{limit}
         ]]>
     </select>
     <select id="boardCountForStatus" parameterType="int" resultType="int">
         <![CDATA[
-            SELECT count(*) FROM board WHERE status = #{status}
+            SELECT count(*) FROM mobilelink.board WHERE status = #{status}
         ]]>
     </select>
 
     <select id="selectOneBoardById" resultType="boardEntity">
         <![CDATA[
-            SELECT * FROM board WHERE id = #{id}
+            SELECT * FROM mobilelink.board WHERE id = #{id}
         ]]>
     </select>
 
     <select id="selectBoardListByAll" parameterType="map" resultType="boardEntity">
         <![CDATA[
-            SELECT * FROM board WHERE status = #{status} and
+            SELECT * FROM mobilelink.board WHERE status = #{status} and
             (title LIKE CONCAT('%',#{keyword},'%') OR content LIKE CONCAT('$',#{keyword},'%'))
             ORDER BY reg_date DESC LIMIT #{offset}, #{limit}
         ]]>
     </select>
     <select id="boardCountByAll" parameterType="map" resultType="int">
         <![CDATA[
-            SELECT count(*) FROM board WHERE status = #{status} and
+            SELECT count(*) FROM mobilelink.board WHERE status = #{status} and
             (title LIKE CONCAT('%',#{keyword},'%') OR content LIKE CONCAT('$',#{keyword},'%'))
         ]]>
     </select>
 
     <select id="selectBoardListByTitle" parameterType="map" resultType="boardEntity">
         <![CDATA[
-            SELECT * FROM board WHERE status = #{status} and title LIKE CONCAT('%',#{keyword},'%')
+            SELECT * FROM mobilelink.board WHERE status = #{status} and title LIKE CONCAT('%',#{keyword},'%')
             ORDER BY reg_date DESC LIMIT #{offset}, #{limit}
         ]]>
     </select>
     <select id="boardCountByTitle" parameterType="map" resultType="int">
         <![CDATA[
-            SELECT count(*) FROM board WHERE status = #{status} and title LIKE CONCAT('%',#{keyword},'%')
+            SELECT count(*) FROM mobilelink.board WHERE status = #{status} and title LIKE CONCAT('%',#{keyword},'%')
         ]]>
     </select>
 
     <select id="selectBoardListByContent" parameterType="map" resultType="boardEntity">
         <![CDATA[
-            SELECT * FROM board WHERE status = #{status} and content LIKE CONCAT('%',#{keyword},'%')
+            SELECT * FROM mobilelink.board WHERE status = #{status} and content LIKE CONCAT('%',#{keyword},'%')
             ORDER BY reg_date DESC LIMIT #{offset}, #{limit}
         ]]>
     </select>
     <select id="boardCountByContent" parameterType="map" resultType="int">
         <![CDATA[
-            SELECT count(*) FROM board WHERE status = #{status} and content LIKE CONCAT('%',#{keyword},'%')
+            SELECT count(*) FROM mobilelink.board WHERE status = #{status} and content LIKE CONCAT('%',#{keyword},'%')
         ]]>
     </select>
 
     <update id="readCountClickToBoard" parameterType="int">
         <![CDATA[
-            UPDATE board set read_count = read_count + 1 WHERE id = #{id}
+            UPDATE mobilelink.board SET read_count = read_count + 1 WHERE id = #{id}
         ]]>
     </update>
 </mapper>
