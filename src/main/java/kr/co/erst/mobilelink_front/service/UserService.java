@@ -8,4 +8,6 @@ public interface UserService {
 
     UserEntity selectForPassword(HashMap<String, Object> map);
 
+    UserEntity selectCheckForlogin(String login);
+
 }

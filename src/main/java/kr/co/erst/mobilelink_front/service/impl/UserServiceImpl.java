@@ -20,4 +20,10 @@ public class UserServiceImpl implements UserService {
     return user;
   }
 
+  @Override
+  public UserEntity selectCheckForlogin(String login) {
+    UserEntity user = userDAO.selectCheckForlogin(login);
+    return user;
+  }
+
 }

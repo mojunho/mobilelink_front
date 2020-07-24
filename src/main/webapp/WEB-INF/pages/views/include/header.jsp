@@ -35,7 +35,7 @@
             <!---//ltnav_title-->
             <div id="cssmenu">
                 <ul>
-                    <li onclick="location.href='homeMain'">
+                    <li onclick="location.href='/homeMain'">
                         <div class="tt">
                             <i class="la la-home"></i> 홈
                         </div>
@@ -45,33 +45,33 @@
                             <i class="la la-mobile"></i> 모바일 임직원 특판
                         </div>
                         <ul>
-                            <li onclick="location.href='sktBoard'">
+                            <li onclick="location.href='/board/sktBoard'">
                                 SKT
                             </li>
-                            <li onclick="location.href='ktBoard'">
+                            <li onclick="location.href='/ktBoard'">
                                 KT
                             </li>
-                            <li onclick="location.href='lgtBoard'">
+                            <li onclick="location.href='/lgtBoard'">
                                 LGT
                             </li>
                         </ul>
                     </li>
-                    <li onclick="location.href='internetBoard'">
+                    <li onclick="location.href='/internetBoard'">
                         <div>
                             <i class="la la-laptop"></i> 유선/인터넷 특판
                         </div>
                     </li>
-                    <li onclick="location.href='lifeMachineBoard'">
+                    <li onclick="location.href='/lifeMachineBoard'">
                         <div>
                             <i class="la la-television"></i> 생활 가전 특판
                         </div>
                     </li>
-                    <li onclick="location.href='eventBoard'">
+                    <li onclick="location.href='/eventBoard'">
                         <div>
                             <i class="la la-bullhorn"></i> 이벤트 공지
                         </div>
                     </li>
-                    <li onclick="location.href='company'">
+                    <li onclick="location.href='/company'">
                         <div>
                             <i class="la la-building"></i> 회사소개
                         </div>
@@ -81,13 +81,13 @@
                             <i class="la la-cog"></i> 설정
                         </div>
                         <ul>
-                            <li onclick="location.href='mypage'">
+                            <li onclick="location.href='/mypage'">
                                 내 정보 수정
                             </li>
-                            <li onclick="location.href='alarm'">
+                            <li onclick="location.href='/alarm'">
                                 알림수신 설정
                             </li>
-                            <li onclick="location.href='logout'">
+                            <li onclick="location.href='/logout'">
                                 로그아웃
                             </li>
                         </ul>

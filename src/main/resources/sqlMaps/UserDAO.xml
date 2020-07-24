@@ -7,4 +7,11 @@
             SELECT * FROM member WHERE login = #{login} AND password = #{password}
         ]]>
     </select>
+
+    <select id="selectCheckForlogin" resultType="userEntity">
+        <![CDATA[
+            SELECT * FROM member WHERE login = #{login}
+        ]]>
+    </select>
+
 </mapper>
