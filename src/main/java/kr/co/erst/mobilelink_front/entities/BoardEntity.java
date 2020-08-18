@@ -11,22 +11,24 @@ public class BoardEntity {
     private Date regDate; // 게시글 등록 날짜
     private Date upDate; // 게시글 갱신 날짜
     private int readCount; // 게시글 조회수
-    private int status; // 게시글 분야(1. SKT, 2. KT, 3. LGT, 4. 유선/인터넷, 5. 생활가전, 6. 이벤트)
+    private int telecom; // 게시글 분야(1. SKT, 2. KT, 3. LGT, 4. 유선/인터넷, 5. 생활가전, 6. 이벤트)
     private int adminId; // 게시글 작성자
+    private int status;
 
     public BoardEntity() {}
-    public BoardEntity(String title, String content, int adminId) {
-        this(0, title, content, null, null, 0, 1, adminId);
+    public BoardEntity(String title, String content, int telecom, int adminId) {
+        this(0, title, content, null, null, 0, telecom, adminId, 0);
     }
-    public BoardEntity(int id, String title, String content, Date regDate, Date upDate, int readCount, int status, int adminId) {
+    public BoardEntity(int id, String title, String content, Date regDate, Date upDate, int readCount, int telecom, int adminId, int status) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.regDate = regDate;
         this.upDate = upDate;
         this.readCount = readCount;
-        this.status = status;
+        this.telecom = telecom;
         this.adminId = adminId;
+        this.status = status;
     }
 
     public int getId() {
@@ -77,20 +79,28 @@ public class BoardEntity {
         this.readCount = readCount;
     }
 
-    public int getStatus() {
-        return status;
+    public int getTelecom() {
+        return telecom;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setTelecom(int telecom) {
+        this.telecom = telecom;
     }
 
     public int getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(int mbId) {
+    public void setAdminId(int adminId) {
         this.adminId = adminId;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override
@@ -102,8 +112,10 @@ public class BoardEntity {
                 ", regDate=" + regDate +
                 ", upDate=" + upDate +
                 ", readCount=" + readCount +
-                ", status=" + status +
+                ", telecom=" + telecom +
                 ", adminId=" + adminId +
+                ", status=" + status +
                 '}';
     }
+
 }
