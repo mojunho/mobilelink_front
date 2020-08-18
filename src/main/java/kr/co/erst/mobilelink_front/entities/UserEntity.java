@@ -11,23 +11,26 @@ public class UserEntity implements Serializable {
   private String login; // 로그인아이디
   private String password; // 비밀번호
   private String phonenumber; // 전화번호
-  private int status; // 회원분류 (1. 일반회원, 2. 사업자회원)
+  private int telecom; // 회원 통신사
   private Date createdDate; // 가입날짜
   private Date updatedDate; // 갱신날짜
+  private int status; // 회원 상태
 
   public UserEntity() {}
-  public UserEntity(String name, String login, String password, String phonenumber, int status) {
-    this(0, name, login, password, phonenumber, status, null, null);
+  public UserEntity(String name, String login, String password, String phonenumber, int telecom) {
+    this(0, name, login, password, phonenumber, telecom, null, null, 1);
   }
-  public UserEntity(int id, String name, String login, String password, String phonenumber, int status, Date createdDate, Date updatedDate) {
+
+  public UserEntity(int id, String name, String login, String password, String phonenumber, int telecom, Date createdDate, Date updatedDate, int status) {
     this.id = id;
     this.name = name;
     this.login = login;
     this.password = password;
     this.phonenumber = phonenumber;
-    this.status = status;
+    this.telecom = telecom;
     this.createdDate = createdDate;
     this.updatedDate = updatedDate;
+    this.status = status;
   }
 
   public int getId() {
@@ -70,12 +73,12 @@ public class UserEntity implements Serializable {
     this.phonenumber = phonenumber;
   }
 
-  public int getStatus() {
-    return status;
+  public int getTelecom() {
+    return telecom;
   }
 
-  public void setStatus(int status) {
-    this.status = status;
+  public void setTelecom(int telecom) {
+    this.telecom = telecom;
   }
 
   public Date getCreatedDate() {
@@ -94,6 +97,14 @@ public class UserEntity implements Serializable {
     this.updatedDate = updatedDate;
   }
 
+  public int getStatus() {
+    return status;
+  }
+
+  public void setStatus(int status) {
+    this.status = status;
+  }
+
   @Override
   public String toString() {
     return "UserEntity{" +
@@ -102,9 +113,11 @@ public class UserEntity implements Serializable {
             ", login='" + login + '\'' +
             ", password='" + password + '\'' +
             ", phonenumber='" + phonenumber + '\'' +
-            ", status=" + status +
+            ", telecom=" + telecom +
             ", createdDate=" + createdDate +
             ", updatedDate=" + updatedDate +
+            ", status=" + status +
             '}';
   }
+
 }
