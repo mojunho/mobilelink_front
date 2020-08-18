@@ -9,22 +9,24 @@ public class BoardEntity {
     private String title; // 게시글 제목
     private String content; // 게시글 내용
     private Date regDate; // 게시글 등록 날짜
+    private Date upDate; // 게시글 갱신 날짜
     private int readCount; // 게시글 조회수
     private int status; // 게시글 분야(1. SKT, 2. KT, 3. LGT, 4. 유선/인터넷, 5. 생활가전, 6. 이벤트)
-    private int mbId; // 게시글 작성자
+    private int adminId; // 게시글 작성자
 
     public BoardEntity() {}
-    public BoardEntity(String title, String content, int mbId) {
-        this(0, title, content, null, 0, 1, mbId);
+    public BoardEntity(String title, String content, int adminId) {
+        this(0, title, content, null, null, 0, 1, adminId);
     }
-    public BoardEntity(int id, String title, String content, Date regDate, int readCount, int status, int mbId) {
+    public BoardEntity(int id, String title, String content, Date regDate, Date upDate, int readCount, int status, int adminId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.regDate = regDate;
+        this.upDate = upDate;
         this.readCount = readCount;
         this.status = status;
-        this.mbId = mbId;
+        this.adminId = adminId;
     }
 
     public int getId() {
@@ -59,6 +61,14 @@ public class BoardEntity {
         this.regDate = regDate;
     }
 
+    public Date getUpDate() {
+        return upDate;
+    }
+
+    public void setUpDate(Date upDate) {
+        this.upDate = upDate;
+    }
+
     public int getReadCount() {
         return readCount;
     }
@@ -75,12 +85,12 @@ public class BoardEntity {
         this.status = status;
     }
 
-    public int getMbId() {
-        return mbId;
+    public int getAdminId() {
+        return adminId;
     }
 
-    public void setMbId(int mbId) {
-        this.mbId = mbId;
+    public void setAdminId(int mbId) {
+        this.adminId = adminId;
     }
 
     @Override
@@ -90,9 +100,10 @@ public class BoardEntity {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", regDate=" + regDate +
+                ", upDate=" + upDate +
                 ", readCount=" + readCount +
                 ", status=" + status +
-                ", mbId=" + mbId +
+                ", adminId=" + adminId +
                 '}';
     }
 }

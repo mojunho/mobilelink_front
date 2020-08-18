@@ -13,12 +13,13 @@ public class UserEntity implements Serializable {
   private String phonenumber; // 전화번호
   private int status; // 회원분류 (1. 일반회원, 2. 사업자회원)
   private Date createdDate; // 가입날짜
+  private Date updatedDate; // 갱신날짜
 
   public UserEntity() {}
   public UserEntity(String name, String login, String password, String phonenumber, int status) {
-    this(0, name, login, password, phonenumber, status, null);
+    this(0, name, login, password, phonenumber, status, null, null);
   }
-  public UserEntity(int id, String name, String login, String password, String phonenumber, int status, Date createdDate) {
+  public UserEntity(int id, String name, String login, String password, String phonenumber, int status, Date createdDate, Date updatedDate) {
     this.id = id;
     this.name = name;
     this.login = login;
@@ -26,6 +27,7 @@ public class UserEntity implements Serializable {
     this.phonenumber = phonenumber;
     this.status = status;
     this.createdDate = createdDate;
+    this.updatedDate = updatedDate;
   }
 
   public int getId() {
@@ -84,6 +86,14 @@ public class UserEntity implements Serializable {
     this.createdDate = createdDate;
   }
 
+  public Date getUpdatedDate() {
+    return updatedDate;
+  }
+
+  public void setUpdatedDate(Date updatedDate) {
+    this.updatedDate = updatedDate;
+  }
+
   @Override
   public String toString() {
     return "UserEntity{" +
@@ -94,6 +104,7 @@ public class UserEntity implements Serializable {
             ", phonenumber='" + phonenumber + '\'' +
             ", status=" + status +
             ", createdDate=" + createdDate +
+            ", updatedDate=" + updatedDate +
             '}';
   }
 }
